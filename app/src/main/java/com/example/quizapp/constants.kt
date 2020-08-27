@@ -1,4 +1,6 @@
 package com.example.quizapp
+//data file
+
 
 object constants{
     const val USER_NAME:String="user_name"

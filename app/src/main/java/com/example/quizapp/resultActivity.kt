@@ -14,7 +14,7 @@ class resultActivity : AppCompatActivity() {
         val totlq=intent.getIntExtra(constants.TOTAL_QUESTIONS,0)
         val corrct=intent.getIntExtra(constants.CORRECT_ANSWERS,0)
         tvusername.text=username
-        out.text="Your Score is $corrct out of $totlq"
+        out.text="Your Score is $corrct out of $totlq"                   //displays the final result alongwithh the username
         restart.setOnClickListener{
             startActivity(Intent(this,MainActivity::class.java))
         }

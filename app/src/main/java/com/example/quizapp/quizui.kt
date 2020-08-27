@@ -23,7 +23,7 @@ class quizui : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quizui)
 
-        mUserName=intent.getStringExtra(constants.USER_NAME)
+        mUserName=intent.getStringExtra(constants.USER_NAME)    //get the username from previous activity
 
         mQuestionsList = constants.getQuestions()
         setQuestion()
@@ -35,6 +35,9 @@ class quizui : AppCompatActivity(), View.OnClickListener {
         submit.setOnClickListener(this)
 
     }
+
+
+//to set the questions one after another on the same activity
 
     private fun setQuestion() {
 
@@ -56,6 +59,11 @@ class quizui : AppCompatActivity(), View.OnClickListener {
             option_four.text = qu.optionFour
         }
     }
+
+
+//to set the background and appearance of all the options back to normal
+
+
     private  fun defaultOptionsView(){
         val options=ArrayList<TextView>()
         options.add(0,option_one)
@@ -69,6 +77,11 @@ class quizui : AppCompatActivity(), View.OnClickListener {
 
         }
     }
+
+
+     //to change the appearance of text and background of correct and wrong answers
+
+
 private fun answerView(answer:Int,drawableView: Int){
     when(answer){
         1->{
@@ -88,7 +101,11 @@ private fun answerView(answer:Int,drawableView: Int){
 
         }
     }
-}
+}  
+
+    //all the functionalities when a button is tapped
+
+
     override fun onClick(v: View?) {
         if (v != null) {
             when(v.id){
@@ -150,13 +167,13 @@ private fun answerView(answer:Int,drawableView: Int){
     }
 
 
-
+      //when an option(textview) is selected but not submitted
 
     private fun selectedOptionView(tv:TextView,selectedOptionNumber:Int){
         defaultOptionsView()
         mSelectPosition=selectedOptionNumber
 
-        tv.setTextColor(Color.parseColor("#363A43"))
+        tv.setTextColor(Color.parseColor("#363A43"))                     
 
         tv.background=ContextCompat.getDrawable(this,R.drawable.selectedoption)
 

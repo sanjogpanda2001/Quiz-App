@@ -15,10 +15,10 @@ class MainActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility= View.SYSTEM_UI_FLAG_FULLSCREEN
         btn_start.setOnClickListener {
             if (name.text.toString().isEmpty()) {  //name--id of edit text
-                Toast.makeText(this, "please enter name", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "please enter name", Toast.LENGTH_SHORT).show()   //toast messege if name not entered
         }
             else{ val intent= Intent(this,quizui::class.java)
-                intent.putExtra(constants.USER_NAME,name.text.toString())
+                intent.putExtra(constants.USER_NAME,name.text.toString())         //next activity is called and username is passed
                 startActivity(intent)
                 finish()
             }
